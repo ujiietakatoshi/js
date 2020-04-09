@@ -18,7 +18,7 @@
 <main>
 <div class="container">
 <section>
-
+<p id="output"></p>
 </section>
 </div><!-- /.container -->
 </main>
@@ -30,17 +30,14 @@
 <script>
   'use strict';
 
-  let enemy = 100;
-  let count =0;
-
-  window.alert('戦闘スタート');
-  while(enemy > 0){
-    const attack = Math.floor(Math.random() * 30) +70;
-    console.log('モンスターに'+ attack + 'のダメージ');
-    enemy -= attack;
-    count += 1;
+  function total(price) {
+    const tax = 0.1;
+    return price + price * tax; 
   }
-  console.log(count + '回でモンスターを倒した');
+
+  console.log('コーヒーメーカーの値段は' + total(8000) + '円(税込)です。');
+  document.getElementById('output').textContent='コーヒーメーカーの値段は'+
+  total(8000)+'円(税込)です。';
 </script>
 </body>
 </html>
